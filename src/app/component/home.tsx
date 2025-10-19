@@ -1,11 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import { Sparkles, Instagram, MessageCircle, Star, Award, Camera, Heart, MapPin, Phone } from 'lucide-react';
+import Link from 'next/link';
 
 const MastuTouchWebsite = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const whatsappNumber = "2348012345678"; // REPLACE THIS
+  const whatsappNumber = "2347045009095"; // REPLACE THIS
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20Mastu%20Touch,%20I'd%20like%20to%20book%20a%20makeup%20session`;
   const instagramLink = "https://instagram.com/mastu_touch_";
 
@@ -24,23 +25,30 @@ const MastuTouchWebsite = () => {
             </div>
 
             <div className="hidden md:flex items-center gap-6">
-              <a href="#services" className="text-purple-900  hover:text-purple-900  transition">Services</a>
-              <a href="#portfolio" className="text-purple-800 hover:text-purple-800 transition">Portfolio</a>
-              <a href="#contact" className="text-purple-800 hover:text-purple-800 transition">Contact</a>
-              <a 
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+               href="#services" className="text-purple-900  hover:text-purple-900  transition">Services</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+                href="#portfolio" className="text-purple-800 hover:text-purple-800 transition">Portfolio</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+               href="#contact" className="text-purple-800 hover:text-purple-800 transition">Contact</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-purple-800 text-fuchsia-100 px-6 py-3 rounded-full font-bold transition flex items-center gap-2"
+                className="bg-purple-800 text-orange-100 px-6 py-3 rounded-full font-bold transition flex items-center gap-2"
               >
                 <MessageCircle size={20} />
                 Book Now
-              </a>
+              </Link>
             </div>
 
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden text-white"
+              className="md:hidden text-purple-900"
             >
               {mobileMenuOpen ? '✕' : '☰'}
             </button>
@@ -48,12 +56,20 @@ const MastuTouchWebsite = () => {
 
           {mobileMenuOpen && (
             <div className="md:hidden pb-4 space-y-3 border-t border-purple-800/30 pt-4">
-              <a href="#services" className="block text-purple-900  py-2">Services</a>
-              <a href="#portfolio" className="block text-purple-900  py-2">Portfolio</a>
-              <a href="#contact" className="block text-purple-900  py-2">Contact</a>
-              <a href={whatsappLink} className="block bg-purple-800 text-purple-900 px-6 py-3 rounded-full font-bold text-center">
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+                href="#services" className="block text-purple-900  py-2">Services</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+                href="#portfolio" className="block text-purple-900  py-2">Portfolio</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+                href="#contact" className="block text-purple-900  py-2">Contact</Link>
+              <Link 
+               onClick={() => setMobileMenuOpen(false)}
+                href={whatsappLink} className="block bg-purple-800 text-orange-100 px-6 py-3 rounded-full font-bold text-center">
                 Book Now
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -65,7 +81,7 @@ const MastuTouchWebsite = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[90vh]">
             {/* Left - Main Image */}
             <div className="relative lg:mt-0 mt-10 order-1 lg:order-1">
-            <div className="inline-flex lg:hidden  mb-5  items-center gap-2 bg-white/80 backdrop-blur-sm border border-purple-900  px-4 py-2 rounded-full shadow-sm">
+            <div className="inline-flex lg:hidden  mb-5  items-center gap-2 bg-orange-100/80 backdrop-blur-sm border border-purple-900  px-4 py-2 rounded-full shadow-sm">
                 <Sparkles size={16} className="text-purple-600" />
                 <span className="text-sm text-purple-800 font-semibold tracking-wide">TOP BRANDS</span>
               </div>
@@ -118,7 +134,7 @@ const MastuTouchWebsite = () => {
 
             {/* Right - Content */}
             <div className="space-y-8 order-2 lg:order-2 lg:py-12 py-10">
-              <div className=" lg:inline-flex hidden items-center gap-2 bg-white/80 backdrop-blur-sm border border-purple-900  px-4 py-2 rounded-full shadow-sm">
+              <div className=" lg:inline-flex hidden items-center gap-2 bg-orange-100/80 backdrop-blur-sm border border-purple-900  px-4 py-2 rounded-full shadow-sm">
                 <Sparkles size={16} className="text-purple-600" />
                 <span className="text-sm text-purple-800 font-semibold tracking-wide">TOP BRANDS</span>
               </div>
@@ -142,7 +158,7 @@ const MastuTouchWebsite = () => {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-purple-800  text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition"
+                  className="bg-purple-800  text-orange-100 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition"
                 >
                   Book Now
                 </a>
@@ -150,7 +166,7 @@ const MastuTouchWebsite = () => {
                   href={instagramLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-bold text-lg transition"
+                  className="bg-orange-100 hover:bg-gray-50 text-gray-900 border-2 border-gray-200 px-8 py-4 rounded-full font-bold text-lg transition"
                 >
                   Read More
                 </a>
@@ -200,18 +216,18 @@ const MastuTouchWebsite = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {icon: Heart, title: "Bridal Makeup", desc: "Flawless looks for your special day", color: "yellow"},
+              {icon: Heart, title: "Bridal Makeup", desc: "Flawless looks for your special day", color: "pink"},
               {icon: Camera, title: "Photoshoot Glam", desc: "Camera-ready professional makeup", color: "pink"},
-              {icon: Sparkles, title: "Special Events", desc: "Stand out at any celebration", color: "purple"},
-              {icon: Star, title: "Makeup Classes", desc: "Learn pro techniques from me", color: "yellow"}
+              {icon: Sparkles, title: "Special Events", desc: "Stand out at any celebration", color: "pink"},
+              {icon: Star, title: "Makeup Classes", desc: "Learn pro techniques from me", color: "pink"}
             ].map((service, i) => {
               const Icon = service.icon;
               return (
-                <div key={i} className="bg-[#1a0b2e] p-8 rounded-2xl border hover:border-purple-900  transition shadow-xl">
-                  <div className={`w-16 h-16 bg-${service.color}-500 rounded-full flex items-center justify-center mb-6`}>
-                    <Icon className="text-white" size={32} />
+                <div key={i} className="bg-orange-50 p-8 rounded-2xl border hover:border-purple-900  transition shadow-xl">
+                  <div className={`w-16 h-16 bg-${service.color}-100 rounded-full flex items-center justify-center mb-6`}>
+                    <Icon className="text-purple-900" size={32} />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <h3 className="text-2xl font-bold text-purple-900 mb-3">{service.title}</h3>
                   <p className="text-purple-900 ">{service.desc}</p>
                 </div>
               );
@@ -241,7 +257,7 @@ const MastuTouchWebsite = () => {
               "https://res.cloudinary.com/dy9yoeiq2/image/upload/v1760872993/IMG_7580_lba95v.jpg",
               "https://res.cloudinary.com/dy9yoeiq2/image/upload/v1760872994/IMG_7576_esdqox.jpg"
             ].map((img, i) => (
-              <div key={i} className="relative aspect-square rounded-2xl overflow-hidden border-4 border-purple-700 hover:border-purple-900  transition shadow-xl group cursor-pointer">
+              <div key={i} className="relative aspect-square rounded-2xl overflow-hidden border-4   transition shadow-xl group cursor-pointer">
                 <img 
                   src={img}
                   alt={`Makeup work ${i + 1}`}
@@ -251,7 +267,7 @@ const MastuTouchWebsite = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-purple-900/0 group-hover:bg-purple-900/60 transition flex items-center justify-center">
-                  <Heart className="text-white opacity-0 group-hover:opacity-100 transition" size={48} />
+                  <Heart className="text-orange-100 opacity-0 group-hover:opacity-100 transition" size={48} />
                 </div>
               </div>
             ))}
@@ -272,10 +288,10 @@ const MastuTouchWebsite = () => {
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="py-20 bg-fuchsia-100">
+      <section id="contact" className="py-20 bg-orange-100">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <Sparkles className="mx-auto mb-6 text-purple-900 " size={56} />
-          <h2 className="text-5xl font-bold text-white mb-6">Ready to Glow?</h2>
+          <h2 className="text-5xl font-bold text-purple-900 mb-6">Ready to Glow?</h2>
           <p className="text-2xl text-purple-900  mb-10">
             Book your makeup session today and let's create magic! ✨
           </p>
@@ -285,7 +301,7 @@ const MastuTouchWebsite = () => {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple-900  hover:bg-yellow-600 text-purple-900 px-10 py-5 rounded-full font-bold text-xl flex items-center gap-3 shadow-xl transition"
+              className="bg-purple-900  hover:bg-yellow-600 text-orange-100 px-10 py-5 rounded-full font-bold text-xl flex items-center gap-3 shadow-xl transition"
             >
               <MessageCircle size={28} />
               Book on WhatsApp
@@ -294,7 +310,7 @@ const MastuTouchWebsite = () => {
               href={instagramLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-purple-700 hover:bg-purple-600 text-white px-10 py-5 rounded-full font-bold text-xl flex items-center gap-3 transition"
+              className="bg-purple-700 hover:bg-purple-600 text-orange-100 px-10 py-5 rounded-full font-bold text-xl flex items-center gap-3 transition"
             >
               <Instagram size={28} />
               Follow Me
@@ -316,15 +332,15 @@ const MastuTouchWebsite = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
             <Sparkles className="text-purple-900 " size={32} />
-            <span className="text-2xl font-bold text-white">Mastu Touch</span>
+            <span className="text-2xl font-bold text-orange-100">Mastu Touch</span>
           </div>
           <p className="text-purple-300 mb-6">Professional Makeup Artistry • Ilorin, Nigeria</p>
           <div className="flex justify-center gap-4 mb-8">
             <a href={whatsappLink} className="w-12 h-12 bg-purple-900  hover:bg-purple-900  rounded-full flex items-center justify-center transition">
-              <MessageCircle className="text-white" size={24} />
+              <MessageCircle className="text-orange-100" size={24} />
             </a>
             <a href={instagramLink} className="w-12 h-12 bg-purple-900  hover:bg-purple-900  rounded-full flex items-center justify-center transition">
-              <Instagram className="text-white" size={24} />
+              <Instagram className="text-orange-100" size={24} />
             </a>
           </div>
           <p className="text-purple-400 text-sm">&copy; 2025 Mastu Touch. All rights reserved.</p>
